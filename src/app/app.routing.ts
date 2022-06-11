@@ -9,6 +9,7 @@ import { CalendarComponent } from './examples/calendar/calendar.component';
 import { AdminComponent } from './examples/admin/admin.component';
 import { LoginComponent } from './examples/login/login.component';
 import { AuthGuard } from './auth-guard';
+import { ChooseServiceComponent } from './examples/chooseService/chooseService.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes =[
       children: [
         { path: '', redirectTo: 'inicio', pathMatch: 'full'},
         { path: 'inicio', component: CalendarComponent },
+        { path: 'servicos', component: ChooseServiceComponent },
       ] },
 ];
 

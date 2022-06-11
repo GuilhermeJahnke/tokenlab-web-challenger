@@ -16,6 +16,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpService } from './providers/http.service';
 import { ENV } from 'environments/environment-variables.token';
 import { environment } from 'environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { environment } from 'environments/environment';
     NgbModule,
     FormsModule,
     RouterModule,
+    HttpClientModule,
     // ComponentsModule,
     ExamplesModule,
     AppRoutingModule,

@@ -72,7 +72,7 @@ export class AuthService {
 
 	me() {
 		return new Promise<void>((resolve, reject) => {
-			this.http.get('api/user/user/getProtected', true).then((auth: any) => {
+			this.http.get('user/user/getProtected', true).then((auth: any) => {
 				console.log('PROTECTED RESPONSE: ', auth);
 				localStorage.setItem('user', JSON.stringify(auth));
 				resolve();

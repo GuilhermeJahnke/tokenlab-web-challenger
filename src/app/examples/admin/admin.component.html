@@ -2,16 +2,23 @@
     <mat-drawer-container class="example-container" autosize>
         <mat-drawer #drawer class="sidenav" mode="side" opened="true">
             <mat-nav-list>
-                <mat-list-item >
-                    <i class="white fa fa-home"></i>
-                    <p class="white padding">Início</p>
-                    
-                </mat-list-item>
-                <mat-divider></mat-divider>
-                <mat-list-item >
+                <mat-list-item  [routerLink]="['/admin/inicio']">
                     <i class="white fa fa-calendar"></i>
                     <p class="white padding"> Calendario</p>
-                   </mat-list-item>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item  [routerLink]="['/admin/servicos']">
+                    <i class="white fa fa-list-ul"></i>
+                    <p class="white padding">  Trocar Serviço</p>
+                </mat-list-item>
+                <mat-list-item >
+                    <i class="white fa fa-user"></i>
+                    <p class="white padding"> Editar Usuário</p>
+                </mat-list-item>
+                <mat-list-item >
+                    <i class="white fa fa-power-off"></i>
+                    <p class="white padding"> Sair</p>
+                </mat-list-item>
                
             </mat-nav-list>
         </mat-drawer>

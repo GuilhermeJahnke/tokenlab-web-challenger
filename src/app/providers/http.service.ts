@@ -76,7 +76,7 @@ export class HttpService {
 		const headers: any = {};
 		headers['Content-Type'] = 'application/json';
 		if (auth) {
-			headers.Authorization = this.token;
+			headers.Authorization = "Bearer " + this.token;
 		}
 
 		let params: Array<any>;
