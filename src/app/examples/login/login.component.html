@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/login-image.jpg');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h3 class="title">Bem Vindo</h3>
+                          
+                          <form class="register-form">
+                              <label>Email ou CPF</label>
+                              <div>
+                                  <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                          <i class="nc-icon nc-email-85"></i>
+                                      </span>
+                                    </div>
+    
+                                      <input type="email" class="form-control" [(ngModel)]="user.login" name="login" placeholder="Email ou CPF" (focus)="focus=true" (blur)="focus=false" >
+                                  </div>
+                              </div>
+                              <label>Password</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                  <input type="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Senha" (focus)="focus1=true" (blur)="focus1=false" >
+                              </div>
+                              
+                              <button class="btn btn-danger btn-block btn-round" (click)="onSubmit()">Register</button>
+                          </form>
+                      </div>
+                    </div>
+                </div>
+                
+            </div>
+    </div>
+</div>
