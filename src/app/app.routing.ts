@@ -9,8 +9,8 @@ import { CalendarComponent } from './examples/calendar/calendar.component';
 import { AdminComponent } from './examples/admin/admin.component';
 import { LoginComponent } from './examples/login/login.component';
 import { AuthGuard } from './auth-guard';
-import { ChooseServiceComponent } from './examples/chooseService/chooseService.component';
 import { UserComponent } from './examples/user/user.component';
+import { ChooseServiceComponent } from './examples/chooseService/chooseService.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },

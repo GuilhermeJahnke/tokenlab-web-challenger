@@ -13,8 +13,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list'; 
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { ChooseServiceComponent } from './chooseService/chooseService.component';
 import { UserComponent } from './user/user.component';
+import { ChooseServiceComponent } from './chooseService/chooseService.component';
+import { ModalEventsComponent } from './modalEvents/modalEvents.component';
 
 @NgModule({
     imports: [
@@ -30,6 +31,7 @@ import { UserComponent } from './user/user.component';
     declarations: [
         CalendarComponent,
         ChooseServiceComponent,
+        ModalEventsComponent,
         UserComponent,
         AdminComponent,
         LandingComponent,

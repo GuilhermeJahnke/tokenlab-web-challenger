@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarService } from 'app/providers/calendar.service';
 import { EventData } from 'ngx-event-calendar/lib/interface/event-data';
+import { ModalEventsComponent } from '../modalEvents/modalEvents.component';
 
 @Component({
     selector: 'app-calendar',
@@ -14,8 +16,11 @@ export class CalendarComponent implements OnInit {
   dataArray: EventData[];
   constructor(
     private CalendarProvider: CalendarService,
+    private modalService: NgbModal
   ) { }
   selectDay(event) {
+    const modalRef = this.modalService.open(ModalEventsComponent);
+    modalRef.componentInstance.name = 'World';
     console.log(event);
  }
   ngOnInit() {
@@ -55,5 +60,10 @@ export class CalendarComponent implements OnInit {
     // startDate: new Date("2019-11-22T21:00:00"), endDate: new Date("2019-11-26T23:00:00"), createdBy: 'Mark',
     // createdAt: new Date("2019-11-10T10:00:00"), type: 2, color: 'red' },
   }
+
+  open() {
+    const modalRef = this.modalService.open(CalendarComponent);
+    modalRef.componentInstance.name = 'World';
+}
 
 }

@@ -1,0 +1,32 @@
+
+<div class="main">
+    <div class="section section-gray text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mr-auto ml-auto">
+                <h2 class="title">Selecione o serviço</h2>
+               
+            </div>
+        </div>
+        <br/><br/>
+
+        <div class="row">
+            <div class="col-md-4"  *ngFor="let i of dataArray">
+                <div class="card info" (click)="selectDay(i)">
+                    <div class="icon icon-danger" style="background-image: url('../../../assets/img/serviceCalendar.jpg');">
+                        <img  src="../../../assets/img/serviceCalendar.jpg" width="100">
+                    </div>
+                    <div class="description">
+                        <h4 class="info-title">{{i.title}}</h4>
+                        <p class="description">{{i.description}}</p>
+                        <a href="https://www.guilhermejahnke.com.br/" class="btn btn-link btn-danger">Selecionar</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+
+</div>
