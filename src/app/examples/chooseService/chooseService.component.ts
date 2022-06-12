@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServicesService } from 'app/providers/services.service';
 import { EventData } from 'ngx-event-calendar/lib/interface/event-data';
 
@@ -14,9 +15,12 @@ export class ChooseServiceComponent implements OnInit {
   dataArray: any ;
   constructor(
     private ServiceProvider: ServicesService,
+    private router: Router,
   ) { }
   selectDay(event) {
+    localStorage.setItem('service', JSON.stringify(event));
     console.log(event);
+    return this.router.navigateByUrl('/admin/calendar');
  }
   ngOnInit() {
     this.ServiceProvider.getAll().then((res)=>{

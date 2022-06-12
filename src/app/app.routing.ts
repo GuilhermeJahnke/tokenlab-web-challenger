@@ -10,6 +10,7 @@ import { AdminComponent } from './examples/admin/admin.component';
 import { LoginComponent } from './examples/login/login.component';
 import { AuthGuard } from './auth-guard';
 import { ChooseServiceComponent } from './examples/chooseService/chooseService.component';
+import { UserComponent } from './examples/user/user.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,9 +22,10 @@ const routes: Routes =[
       component: AdminComponent,
       // canActivate:[AuthGuard],
       children: [
-        { path: '', redirectTo: 'inicio', pathMatch: 'full'},
-        { path: 'inicio', component: CalendarComponent },
+        { path: '', redirectTo: 'servicos', pathMatch: 'full'},
+        { path: 'calendar', component: CalendarComponent },
         { path: 'servicos', component: ChooseServiceComponent },
+        { path: 'user', component: UserComponent },
       ] },
 ];
 

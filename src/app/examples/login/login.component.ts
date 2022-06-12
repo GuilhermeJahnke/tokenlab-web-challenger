@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 		  this.AuthProvider.login(params).then((res)=>{
 			console.log(res);
 			setTimeout(() => {
-						  return this.router.navigateByUrl('/admin/inicio');
+						  return this.router.navigateByUrl('/admin/servicos');
 			}, 50);
 		  })
 	 

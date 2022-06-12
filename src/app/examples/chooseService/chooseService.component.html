@@ -12,14 +12,14 @@
 
         <div class="row">
             <div class="col-md-4"  *ngFor="let i of dataArray">
-                <div class="card info">
+                <div class="card info" (click)="selectDay(i)">
                     <div class="icon icon-danger" style="background-image: url('../../../assets/img/serviceCalendar.jpg');">
                         <img  src="../../../assets/img/serviceCalendar.jpg" width="100">
                     </div>
                     <div class="description">
                         <h4 class="info-title">{{i.title}}</h4>
-                        <p class="description">Gosto de desenvolver a parte visual do projeto, seja mobile ou web!</p>
-                        <a href="https://www.guilhermejahnke.com.br/" class="btn btn-link btn-danger">See more</a>
+                        <p class="description">{{i.description}}</p>
+                        <a href="https://www.guilhermejahnke.com.br/" class="btn btn-link btn-danger">Selecionar</a>
                     </div>
                 </div>
             </div>

@@ -19,10 +19,12 @@ export class CalendarComponent implements OnInit {
     console.log(event);
  }
   ngOnInit() {
+    var service = JSON.parse(localStorage.getItem('service'))
+        console.log("this is service", service)
     var params = {
       initAt: "2020-01-06T22:30:00.000Z",
       endAt: "2022-09-06T23:30:00.000Z",
-      serviceID: "62a3e8367f831bb1aceca824"
+      serviceID: service._id
     }
     this.CalendarProvider.getAvailableHours(params).then((res)=>{
 			console.log("this is allcalendar", res);

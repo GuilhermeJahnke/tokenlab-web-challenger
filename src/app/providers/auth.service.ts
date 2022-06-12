@@ -21,14 +21,8 @@ export class AuthService {
 					resolve(res.token);
 				});
 			}).catch(err => {
-				reject(err)
 				console.log('erroorrre', err);
-				// return this.utils.toast({
-				// 	/* message: err.error.message, */
-				// 	message: 'Email ou senha inválidos',
-				// 	duration: 10000,
-				// 	action: 'Ok'
-				// });
+				reject(err)
 			});
 		});
 	}
@@ -41,14 +35,20 @@ export class AuthService {
 					resolve();
 				});
 			}).catch(err => {
-				// console.log("erroorrre", err.error.message);
+				console.log("erroorrre", err);
 				reject(err)
-				// return this.utils.toast({
-				// 	/* message: err.error.message, */
-				// 	message: 'Este usuário já está cadastrado, tente novamente com outro email.',
-				// 	duration: 10000,
-				// 	action: 'Ok'
-				// });
+			});
+		});
+	}
+	update(data: any): any {
+		return new Promise<void>((resolve, reject) => {
+			this.http.post('user/user/edit', true, data).then(res => {
+				this.me().then((r) => {
+					resolve();
+				});
+			}).catch(err => {
+				console.log("erroorrre", err);
+				reject(err)
 			});
 		});
 	}
@@ -79,7 +79,6 @@ export class AuthService {
 			})
 			.catch(err => {
 				localStorage.clear();
-				// localStorage.removeItem('user');
 				this.router.navigate(['/entrar']);
 				reject(err);
 			});

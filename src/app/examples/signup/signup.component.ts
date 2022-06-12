@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'app/providers/auth.service';
 import { UtilsProvider } from 'commons/utils';
 
@@ -12,7 +13,8 @@ export class SignupComponent implements OnInit {
 	user: any = {};
     constructor(
         public utils: UtilsProvider,
-        // public AuthProvider: AuthService,
+        public AuthProvider: AuthService,
+		private router: Router,
     ) { }
 
     async ngOnInit() {
@@ -24,9 +26,12 @@ export class SignupComponent implements OnInit {
 	
 	
 		  const params = {...this.user};
-		//   this.AuthProvider.register(params).then((res)=>{
-		// 	console.log(res);
-		//   })
+		  this.AuthProvider.register(params).then((res)=>{
+			setTimeout(() => {
+				return this.router.navigateByUrl('/login');
+  			}, 50);
+			console.log(res);
+		  })
 	 
 	console.log(this.user);
 		// if (!this.user.email || !this.user.password || !this.user.confirmPassword || !this.user.name || !this.user.lastName ) 

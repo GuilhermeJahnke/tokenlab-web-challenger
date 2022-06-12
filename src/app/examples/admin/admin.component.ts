@@ -15,6 +15,8 @@ import { DOCUMENT } from '@angular/common';
 
 // import { MatButton } from '@angular/material/button';
 import { MatDrawer } from '@angular/material/sidenav';
+import { AuthService } from 'app/providers/auth.service';
+import { Router } from '@angular/router';
 
 
 
@@ -44,11 +46,12 @@ export class AdminComponent implements OnInit {
 		// private titleService: Title,
 		// private metaTagService: Meta,
 		// private _snackBar: MatSnackBar,
+      public AuthProvider: AuthService,
+	  private router: Router,
 		@Inject(DOCUMENT) private document: Document,
 	) { }
 
 	ngOnInit() {
-
 		
 		// this.userProvider.checkPaid().then((res: any) =>{
 		// 	res.paid ? console.log("Usuário pagou a taxa")
@@ -86,11 +89,8 @@ export class AdminComponent implements OnInit {
 	}
 
 	logout() {
-		// this.ENV.logged = false;
-		// this.ENV.admin = false;
-		// this.ENV.active = "";
-        // localStorage.clear();
-        // this.router.navigate(["/"]);
+        localStorage.clear();
+        this.router.navigate(["/home"]);
     }
 
 	openDialog() {

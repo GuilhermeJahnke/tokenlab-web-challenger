@@ -1,0 +1,68 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/login-image.jpg');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h3 class="title">Olá, {{userName}}</h3>
+                          <p class="description center">Altere abaixo os campos que deseja editar</p>
+                          <form class="register-form">
+                              <label>Email</label>
+                              <div>
+                                  <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                          <i class="nc-icon nc-email-85"></i>
+                                      </span>
+                                    </div>
+    
+                                      <input type="email" class="form-control" [(ngModel)]="user.email" name="email" placeholder="Email ou CPF" (focus)="focus=true" (blur)="focus=false" >
+                                  </div>
+                              </div>
+                              <label>CPF</label>
+                              <div>
+                                  <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                          <i class="nc-icon nc-email-85"></i>
+                                      </span>
+                                    </div>
+    
+                                      <input type="email" class="form-control" [(ngModel)]="user.cpf" name="cpf" placeholder="Email ou CPF" (focus)="focus=true" (blur)="focus=false" >
+                                  </div>
+                              </div>
+                              <label>Nome</label>
+                              <div>
+                                  <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                          <i class="nc-icon nc-email-85"></i>
+                                      </span>
+                                    </div>
+    
+                                      <input type="email" class="form-control" [(ngModel)]="user.name" name="name" placeholder="Email ou CPF" (focus)="focus=true" (blur)="focus=false" >
+                                  </div>
+                              </div>
+                              <label>Sobrenome</label>
+                              <div>
+                                  <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                          <i class="nc-icon nc-email-85"></i>
+                                      </span>
+                                    </div>
+    
+                                      <input type="email" class="form-control" [(ngModel)]="user.lastName" name="lastName" placeholder="Email ou CPF" (focus)="focus=true" (blur)="focus=false" >
+                                  </div>
+                              </div>
+                              
+                              <button class="btn btn-danger btn-block btn-round" (click)="onSubmit()">Editar</button>
+                          </form>
+                      </div>
+                    </div>
+                </div>
+                
+            </div>
+    </div>
+</div>

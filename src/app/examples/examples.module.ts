@@ -14,6 +14,7 @@ import {MatListModule} from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ChooseServiceComponent } from './chooseService/chooseService.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
     imports: [
@@ -29,6 +30,7 @@ import { ChooseServiceComponent } from './chooseService/chooseService.component'
     declarations: [
         CalendarComponent,
         ChooseServiceComponent,
+        UserComponent,
         AdminComponent,
         LandingComponent,
         SignupComponent,
