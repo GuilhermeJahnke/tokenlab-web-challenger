@@ -4,8 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mr-auto ml-auto">
-                <h2 class="title">Selecione o serviço</h2>
-               
+                <h4 class="title">Eventos do dia</h4>
+                <p class="description center">{{eventDay.day}} / {{eventDay.month}} / {{eventDay.year}}</p>
+
             </div>
         </div>
         <br/><br/>
@@ -18,8 +19,9 @@
                     </div>
                     <div class="description">
                         <h4 class="info-title">{{i.title}}</h4>
-                        <p class="description">{{i.description}}</p>
-                        <a href="https://www.guilhermejahnke.com.br/" class="btn btn-link btn-danger">Selecionar</a>
+                        <p class="description">Inicio: {{i.startDate}}</p>
+                        <p class="description">Fim: {{i.endDate}}</p>
+                        <a  *ngIf="i.isMe"   href="https://www.guilhermejahnke.com.br/" class="btn btn-link btn-danger">Selecionar</a>
                     </div>
                 </div>
             </div>

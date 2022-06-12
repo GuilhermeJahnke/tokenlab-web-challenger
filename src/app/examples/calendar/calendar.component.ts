@@ -20,8 +20,7 @@ export class CalendarComponent implements OnInit {
   ) { }
   selectDay(event) {
     const modalRef = this.modalService.open(ModalEventsComponent);
-    modalRef.componentInstance.name = 'World';
-    console.log(event);
+    modalRef.componentInstance.eventData = event;
  }
   ngOnInit() {
     var service = JSON.parse(localStorage.getItem('service'))
@@ -49,7 +48,7 @@ export class CalendarComponent implements OnInit {
         desc: element.description,
         startDate: new Date(element.initAt),
         endDate: new Date(element.endAt),
-        createdBy: "me",
+        createdBy: element.userRef,
         type: 1,
         color: "red"
       }
