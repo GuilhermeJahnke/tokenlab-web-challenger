@@ -16,10 +16,8 @@ export class ServicesService {
 	create(data: any): any {
 		return new Promise((resolve, reject) => {
 			this.http.post('service/service/create', true, data).then(res => {
-				console.log(res)
 			}).catch(err => {
 				reject(err)
-				console.log('erroorrre', err);
 			});
 		});
 	}
@@ -27,10 +25,7 @@ export class ServicesService {
 	update(data: any): any {
 		return new Promise<void>((resolve, reject) => {
 			this.http.post('service/service/edit', true, data).then(res => {
-				console.log('UPDATE RESPONSE', res);
-				
 			}).catch(err => {
-			
 				reject(err)
 			});
 		});
@@ -39,10 +34,8 @@ export class ServicesService {
 	delete(data: any): any {
 		return new Promise<void>((resolve, reject) => {
 			this.http.post('service/service/delete', true, data).then(res => {
-				console.log('DELETE RESPONSE', res);
-				
+				resolve(res)
 			}).catch(err => {
-			
 				reject(err)
 			});
 		});

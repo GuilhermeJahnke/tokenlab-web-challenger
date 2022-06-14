@@ -1,19 +1,11 @@
 import { Injectable } from '@angular/core';
-// import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class UtilsProvider {
 	constructor(
-		// private _snackBar: MatSnackBar
 	) { }
-
-	// toast(options: any) {
-	// 	this._snackBar.open(options.message, options.action, {
-	// 		duration: options.duration || 6000,
-	// 	});
-	// }
 
 	tryCatch(promise) {
 		return promise.then(data => {

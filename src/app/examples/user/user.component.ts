@@ -4,6 +4,7 @@ import { AuthService } from 'app/providers/auth.service';
 import { ServicesService } from 'app/providers/services.service';
 import { UtilsProvider } from 'commons/utils';
 import { EventData } from 'ngx-event-calendar/lib/interface/event-data';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-user',
@@ -18,50 +19,24 @@ export class UserComponent implements OnInit {
   constructor(
       public utils: UtilsProvider,
       public AuthProvider: AuthService,
-  private router: Router,
+      private router: Router,
+      private toastr: ToastrService
   ) { }
 
   async ngOnInit() {
     var userStorage = JSON.parse(localStorage.getItem('user'))
     this.userName = userStorage.userInfo.name;
-    console.log("AAAAAAAAAAAAAA", userStorage)
+    this.user = userStorage;
+    this.user.name = userStorage.userInfo.name
+    this.user.lastName = userStorage.userInfo.lastName
 }
 
   onSubmit() {
-
     const params = {...this.user};
     this.AuthProvider.update(params).then((res)=>{
-    console.log(res);
-    
-    })
+      this.toastr.success('Perfil Atualizado com sucesso!', 'Atualizado!' );
+    }).catch(err => this.toastr.error( err, 'Erro!'))
  
-console.log(this.user);
-  // if (!this.user.email || !this.user.password || !this.user.confirmPassword || !this.user.name || !this.user.lastName ) 
-  // { return this.toaster.showErrorToast('Erro', 'Preencha corretamente o formulário', 5000); }
-
-
-  //   const params = {...this.user};
-
-  //   this.service.register(this.strategy, params).subscribe((result: NbAuthResult) => {
-  // 	if (result.isSuccess()) {
-  // 	  this.toaster.showSuccessToast(`Seja bem vindo à RX-ASSIST, ${this.user.name + "" + this.user.lastName}!`);
-  // 	  const redirect = result.getRedirect();
-  // 	  if (redirect) {
-  // 		setTimeout(() => {
-  // 		  return this.router.navigateByUrl('/auth/login');
-  // 		}, this.redirectDelay);
-  // 	  }
-  // 	}
-  // 	else {
-  // 	  const error = result.getResponse().error.error || result.getResponse().status || 'Não foi possível realizar conexão com o servidor';
-  // 	  const errorMessage = result.getResponse().error.message || 'Não foi possível realizar conexão com o servidor';
-  // 	  this.toaster.showErrorToast(
-  // 		errorMessage,
-  // 		'Falha no Cadastro'
-  // 	  );
-  // 	}
-  // 	// this.errors = result.getErrors();
-  //   });
 }
 
 }

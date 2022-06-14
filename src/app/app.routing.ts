@@ -11,6 +11,7 @@ import { LoginComponent } from './examples/login/login.component';
 import { AuthGuard } from './auth-guard';
 import { UserComponent } from './examples/user/user.component';
 import { ChooseServiceComponent } from './examples/chooseService/chooseService.component';
+import { ServiceComponent } from './examples/service/service.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },

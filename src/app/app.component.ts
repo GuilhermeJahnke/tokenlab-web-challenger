@@ -28,14 +28,15 @@ export class AppComponent implements OnInit {
             this.navbar.sidebarClose();
         });
 
-        this.renderer.listen('window', 'scroll', (event) => {
-            const number = window.scrollY;
-            if (number > 150 || window.pageYOffset > 150) {
-                navbar.classList.remove('navbar-transparent');
-            } else {
-                navbar.classList.add('navbar-transparent');
-            }
-        });
+        navbar.classList.remove('navbar-transparent');
+        // this.renderer.listen('window', 'scroll', (event) => {
+        //     const number = window.scrollY;
+            // if (number > 150 || window.pageYOffset > 150 ) {
+            //     navbar.classList.remove('navbar-transparent');
+            // } else {
+            //     navbar.classList.add('navbar-transparent');
+            // }
+        // });
         var ua = window.navigator.userAgent;
         var trident = ua.indexOf('Trident/');
         if (trident > 0) {

@@ -17,11 +17,9 @@ export class CalendarService {
 	create(data: any): any {
 		return new Promise((resolve, reject) => {
 			this.http.post('events/events/create', true, data).then(res => {
-				console.log(res)
 				resolve(res);
 			}).catch(err => {
 				reject(err)
-				console.log('erroorrre', err);
 			});
 		});
 	}
@@ -29,7 +27,6 @@ export class CalendarService {
 	update(data: any): any {
 		return new Promise<void>((resolve, reject) => {
 			this.http.post('events/events/edit', true, data).then(res => {
-				console.log('UPDATE RESPONSE', res);
 				resolve(res);
 			}).catch(err => {
 			
@@ -41,7 +38,6 @@ export class CalendarService {
 	delete(data: any): any {
 		return new Promise<void>((resolve, reject) => {
 			this.http.post('events/events/remove', true, data).then(res => {
-				console.log('DELETE RESPONSE', res);
 				resolve(res);
 			}).catch(err => {
 			
@@ -53,7 +49,6 @@ export class CalendarService {
 	getAvailableHours(data: any): any {
 		return new Promise<void>((resolve, reject) => {
 			this.http.post('events/events/getEventsForHours', true, data).then(res => {
-				console.log('getEventsForHours RESPONSE', res);
 				resolve(res);
 			}).catch(err => {
 				reject(err)

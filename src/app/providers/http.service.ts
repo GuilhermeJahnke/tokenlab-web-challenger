@@ -2,12 +2,6 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from 'environments/environment';
-// import { environment } from '../environments/environment';
-// import { reject } from 'q';
-// import { Observable } from "rxjs";
-// import "rxjs/add/operator/map";
-// import {MatSnackBar} from '@angular/material/snack-bar';
-// import { ENV } from '../environments/environment-variables.token';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,9 +17,7 @@ export class HttpService {
 	public delay: any;
 	constructor(
 		private http: HttpClient,
-		// private snackBar: MatSnackBar,
 		private router: Router,
-		// tslint:disable-next-line:no-shadowed-variable
 	) { }
 
 
@@ -53,15 +45,12 @@ export class HttpService {
 	getToken(): any {
 		return new Promise((resolve, reject) => {
 			this.token = localStorage.getItem('currentUser_token');
-			// const temp = JSON.parse(sessionStorage.getItem("currentUser_token"));
-			// this.token = temp ? temp._value : "";
 			resolve(this.token);
 		}).catch(err => console.log('Error trying to get token: ', err));
 	}
 	setToken(token: string): any {
 		return new Promise<void>((resolve, reject) => {
 			localStorage.setItem('currentUser_token', token);
-			// this.session.set("currentUser_token", token, 2, "h");
 			this.token = token;
 			resolve();
 		}).catch(err => console.log('Error trying to set token: ', err));
@@ -69,7 +58,6 @@ export class HttpService {
 
 	request(path: string, method: string, auth: boolean, data: any = {}, baseHost: any): any {
 
-		// if (!environment.API_URL) { environment.API_URL = 'https://apihmlg.youdoctor.com.br'; }
 		let url: string = String(environment.API_URL) + '/' + String(path);
 		console.log('this.token;', this.token);
 		if (baseHost) { url = baseHost + '/' + String(path); }
@@ -100,7 +88,6 @@ export class HttpService {
 						
 					}
 					resolve(res);
-					// loading.dismiss();
 				}, (err) => {
 					console.log('ERROR: ', err.status);
 					if (err.status === 401){
@@ -118,20 +105,12 @@ export class HttpService {
 					if (this.count === 0) {
 						if (this.timer) { clearTimeout(this.timer); }
 					}
-					// if (err.error.message) {this.openSnackBar(err.error.message); } else if (err.message) {this.openSnackBar(err.message); }
-					// console.log("Error on request method (http service): ", err);
 					if (err.error && err.error.message) { return reject(err.error.message); }
 					reject(err);
-					// loading.dismiss();
 				});
 		});
 	}
-	// openSnackBar(message: string, action: string = 'OK', duration = 4000, ) {
-	// 	this.snackBar.open(message, action, {
-	// 	  duration,
-	// 	  verticalPosition: 'top',
-	// 	});
-	// }
+
 	
 	autorizedRequest(method: string, url: string, data?: any) {
 		const requestUrl = environment.API_URL + '/' + url;
@@ -156,8 +135,5 @@ export class HttpService {
 		return this.http[method](...this.model).toPromise();
 	}
 	toast(options: any) {
-		// this.snackBar.open(options.message, options.action, {
-		// 	duration: options.duration || 6000,
-		// });
 	}
 }

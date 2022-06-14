@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { ChooseServiceComponent } from './chooseService/chooseService.component';
 import { ModalEventsComponent } from './modalEvents/modalEvents.component';
+import { ModalEventsActionComponent } from './modalEventsAction/modalEventsAction.component';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
     imports: [
@@ -26,13 +28,15 @@ import { ModalEventsComponent } from './modalEvents/modalEvents.component';
         NgbModule,
         MatSidenavModule,
         MatListModule,
-        RouterModule  
+        RouterModule,  
     ],
     declarations: [
         CalendarComponent,
         ChooseServiceComponent,
         ModalEventsComponent,
+        ModalEventsActionComponent,
         UserComponent,
+        ServiceComponent,
         AdminComponent,
         LandingComponent,
         SignupComponent,

@@ -1,13 +1,15 @@
-      <div class="calendar">
+<div class="padding" >
+
+    <button class="border btn btn-danger btn-block btn-round" (click)="addEvent()">Criar evento</button>
+</div>
+<br>
+<div class="calendar">
           <ngx-event-calendar 
-          
-          [showAddButton]="false" 
-      [language]="'en'"
-      [dataSource]="dataArray" 
-      (dayEvents)="selectDay($event)" 
-          
-          
-          > 
+            [language]="'en'"
+            [dataSource]="dataArray" 
+            (dayEvents)="selectDay($event)" 
+            [showAddButton]="false"
+            > 
           </ngx-event-calendar>
       </div>
         

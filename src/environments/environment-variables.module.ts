@@ -8,7 +8,6 @@ declare const process: any; // Typescript compiler will complain without this
 
 export function environmentFactory() {
 	const NODE_ENV = !(typeof process.env.NODE_ENV === "undefined") ? process.env.NODE_ENV : "dev";
-	console.log("Using " + NODE_ENV + " variables.");
 
 	let vars;
 
