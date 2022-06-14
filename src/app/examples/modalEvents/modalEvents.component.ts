@@ -34,7 +34,8 @@ export class ModalEventsComponent implements OnInit {
       title: event.title ,
       description: event.desc,
       initAt: this.datePipe.transform( event.startDate,'yyyy-MM-ddThh:mm') ,
-      endAt: this.datePipe.transform(  event.endDate,'yyyy-MM-ddThh:mm')
+      endAt: this.datePipe.transform(  event.endDate,'yyyy-MM-ddThh:mm'),
+      id: event.id
     };
  }
   delete(event) {

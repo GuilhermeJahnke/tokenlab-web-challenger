@@ -49,5 +49,21 @@ isDisabled(date: NgbDateStruct, current: {month: number}) {
         this.toastr.success('Horario criado com sucesso!', 'Criado!');
 		  }).catch(err => this.toastr.error(err, "Erro!"))
 	}
+  onEdit() {
+    var service = JSON.parse(localStorage.getItem('service'))
+    console.log(this.event)
+		  const params = {
+        initAt: this.event.initAt,
+          endAt: this.event.endAt,
+          description: this.event.description,
+          title: this.event.title,
+          eventID: this.event.id,
+          serviceRef: service._id
+      };
+		  this.CalendarProvider.update(params).then((res)=>{
+        this.modalService.dismissAll();
+        this.toastr.success('Horario atualizado com sucesso!', 'Atualizado!');
+		  }).catch(err => this.toastr.error(err, "Erro!"))
+	}
   
 }
